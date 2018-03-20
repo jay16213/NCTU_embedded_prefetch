@@ -16,8 +16,8 @@ main_arm: $(GIT_HOOKS) main.c
 	$(ARM_CC) $(ARM_LDFLAGS) -o main_arm main_arm.o
 
 main_arm_pre: $(GIT_HOOKS) main.c
-	$(ARM_CC) $(ARM_CFLAGS) -DARM_PRE -o main_arm.o main.c
-	$(ARM_CC) $(ARM_LDFLAGS) -o main_arm_pre main_arm.o
+	$(ARM_CC) $(ARM_CFLAGS) -DARM_PRE -pthread -o main_arm.o main.c
+	$(ARM_CC) $(ARM_LDFLAGS) -pthread -o main_arm_pre main_arm.o
 
 cache-test: $(EXEC)
 	perf stat --repeat 5 \
