@@ -91,9 +91,9 @@ void neon_prefetch_transpose(int *src, int *dst, int w, int h)
             int32x4_t T1 = vcombine_s32(vget_high_s32(I0), vget_high_s32(I1));
             int32x4_t T2 = vcombine_s32(vget_low_s32(I2), vget_low_s32(I3));
             int32x4_t T3 = vcombine_s32(vget_high_s32(I2), vget_high_s32(I3));
-            int32x4_t T4 = vcombine_s32(vget_high_s32(I4), vget_high_s32(I5));
+            int32x4_t T4 = vcombine_s32(vget_low_s32(I4), vget_low_s32(I5));
             int32x4_t T5 = vcombine_s32(vget_high_s32(I4), vget_high_s32(I5));
-            int32x4_t T6 = vcombine_s32(vget_high_s32(I6), vget_high_s32(I7));
+            int32x4_t T6 = vcombine_s32(vget_low_s32(I6), vget_low_s32(I7));
             int32x4_t T7 = vcombine_s32(vget_high_s32(I6), vget_high_s32(I7));
 
             vst1q_s32((int32_t *)(dst + ((x + 0) * h) + y), T0);
